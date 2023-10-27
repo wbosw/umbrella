@@ -25,9 +25,14 @@ parsed_response
 
 results = parsed_response.fetch("results")
 
-pp first_result = results
+first_result = results.at(0)
 
+geometry = first_result.fetch("geometry")
 
+lat_lng = geometry.fetch("location")
+
+pp lat = lat_lng.fetch("lat")
+pp lng = lat_lng.fetch("lng")
 
 # "https://api.pirateweather.net/forecast/" + ENV[PIRATE_WEATHER_API_KEY] "/41.8887,-87.6355
 
